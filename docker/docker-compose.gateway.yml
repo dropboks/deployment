@@ -3,14 +3,11 @@ services:
     container_name: gateway
     build:
       context: ../nginx
-      args:
-        NGINX_VERSION: 1.28.0-alpine-slim
     platform: linux/amd64
     restart: unless-stopped
     ports:
       - "80:80"
     depends_on:
-      - postgres
-      - minio
-      - nats
-      - redis
+      - auth_service
+      - user_service
+      - file_service

@@ -3,9 +3,6 @@ services:
     container_name: nats
     image: nats:latest
     restart: unless-stopped
-    ports:
-      - "4222:4222"
-      - "8081:8081"
     volumes:
       - ../nats/nats-server.conf:/etc/nats/nats.conf
       - nats-data:/nats:rw
