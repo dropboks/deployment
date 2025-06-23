@@ -5,10 +5,15 @@ if [[ $(basename "$PWD") == "bin" ]]; then
   exit 1
 fi
 
+export COMPOSE_BAKE=true
+
 cd ./docker
 docker compose --env-file ../.env -p dropboks \
   -f docker-compose.db.init.yml \
   -f docker-compose.minio.init.yml \
   -f docker-compose.nats.init.yml \
   -f docker-compose.redis.init.yml \
-  up --wait -d 
+  -f docker-compose.grafana.init.yml \
+  -f docker-compose.prometheus.init.yml \
+  -f docker-compose.nats-prometheus-exp.init.yml \
+  up --wait -d
