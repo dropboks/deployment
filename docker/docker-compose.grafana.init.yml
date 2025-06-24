@@ -4,8 +4,6 @@ services:
     build:
       context: ../grafana
       dockerfile: Dockerfile
-      args:
-        GRAFANA_VERSION: ${GRAFANA_VERSION}
     ports:
       - "3000:3000"
     environment:

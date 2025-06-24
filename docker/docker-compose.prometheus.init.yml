@@ -2,8 +2,6 @@ services:
   prometheus:
     build:
       context: ../prometheus
-      args:
-        PROMETHEUS_VERSION: ${PROMETHEUS_VERSION}
     container_name: prometheus
     command:
       - "--config.file=/etc/prometheus/prometheus.yml"

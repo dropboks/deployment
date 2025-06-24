@@ -1,5 +1,4 @@
-ARG GRAFANA_VERSION
-FROM grafana/grafana:${GRAFANA_VERSION}
+FROM grafana/grafana:11.6.3-ubuntu
 
 # Copy provisioning files
 COPY provisioning/datasources /etc/grafana/provisioning/datasources

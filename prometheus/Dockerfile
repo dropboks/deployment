@@ -1,4 +1,3 @@
-ARG PROMETHEUS_VERSION
-FROM prom/prometheus:${PROMETHEUS_VERSION}
+FROM prom/prometheus:v3.4.1
 
 COPY prometheus.yml /etc/prometheus/prometheus.yml

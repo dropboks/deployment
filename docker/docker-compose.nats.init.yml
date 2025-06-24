@@ -3,8 +3,6 @@ services:
     container_name: nats
     build:
       context: ../nats
-      args:
-        NATS_VERSION: ${NATS_VERSION}
     restart: unless-stopped
     volumes:
       - nats-data:/nats:rw
