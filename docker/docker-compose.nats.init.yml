@@ -10,9 +10,9 @@ services:
       - nats-data:/nats:rw
       - jetstream-data:/jetstream/data:rw
     environment:
-      - NATS_USER=nats-user
-      - NATS_PASSWORD=password
-    command: "-c /etc/nats/nats.conf --name nats -p 4222 -m 8222 "
+      - NATS_USER=${NATS_USER}
+      - NATS_PASSWORD=${NATS_PASSWORD}
+    command: "-c /etc/nats/nats.conf --name nats -p 4221 -m 8222 "
     ports:
       - "8080:8080"
 
