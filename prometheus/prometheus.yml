@@ -16,3 +16,19 @@ scrape_configs:
     scrape_interval: 5s
     static_configs:
       - targets: ["prometheus-redis-exporter:9121"]
+  - job_name: "minio-scraper-cluster"
+    metrics_path: /minio/v2/metrics/cluster
+    scheme: http
+    scrape_interval: 60s
+    static_configs:
+      - targets: ["minio:80"]
+  - job_name: "minio-scraper-node"
+    metrics_path: /minio/v2/metrics/node
+    scheme: http
+    scrape_interval: 60s
+    static_configs:
+      - targets: ["minio:80"]
+  - job_name: "postgresql-scraper"
+    scrape_interval: 30s
+    static_configs:
+      - targets: ["prometheus-postgresql-exporter:9187"]

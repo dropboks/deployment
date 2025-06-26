@@ -1,0 +1,10 @@
+services:
+  prometheus-postgresql-exporter:
+    image: quay.io/prometheuscommunity/postgres-exporter:v0.17.1
+    container_name: prometheus-postgresql-exporter
+    environment:
+      - DATA_SOURCE_NAME=postgresql://postgres:${DB_POSTGRESQL_PASSWORD}@${DB_DOCKER_HOST}:${DB_PORT}/${DB_NAME}?sslmode=${DB_SSLMODE}
+    restart: unless-stopped
+    depends_on:
+      - postgres
+      - prometheus
