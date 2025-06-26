@@ -11,3 +11,4 @@ services:
     restart: unless-stopped
     depends_on:
       - nats
+      - prometheus

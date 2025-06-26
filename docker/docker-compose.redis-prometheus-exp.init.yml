@@ -8,7 +8,6 @@ services:
     restart: unless-stopped
     # need to add password file here 
     command: ["--redis.addr=redis://redis:6379","--redis.password=$REDIS_PASSWORD"]
-    ports:
-      - 9121:9121
     depends_on:
       - redis
+      - prometheus

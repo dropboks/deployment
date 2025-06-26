@@ -6,5 +6,3 @@ services:
     restart: unless-stopped
     command:
       - "--config.file=/etc/prometheus/prometheus.yml"
-    depends_on:
-      - prometheus-nats-exporter
