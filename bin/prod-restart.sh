@@ -1,5 +1,5 @@
 #!/bin/bash
 
-./bin/stop-prod.sh
+./bin/prod-stop.sh
 ./bin/prod-init.sh
 ./bin/prod-start.sh
